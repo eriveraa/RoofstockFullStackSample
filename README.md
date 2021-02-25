@@ -4,6 +4,8 @@ ASP.Net Core MVC application that fetch data from API endpoint and save into loc
 The project gets the data from a specific endpoint and maps (with Automapper) into a flat DTO in order to show in the browser. In the browser UI, the user is able to save the record into database. 
 When the user writes the record, the database is first searched, if the record does not exist, it is saved and a successful message is sent. Otherwise, if the record already exists, a message is sent indicating it.
 
+**Technologies used**: ASP.Net Core 3.1 (MVC), Entity Framework Core, AutoMapper and SQL Server 2019.
+
 ## Database creation
 In order to use this demo, create a local SQL Server database (SQLExpress or better). Then, create this table:
 
@@ -28,7 +30,7 @@ GO
 ```
 
 ## Connection string
-Update the ConnectionString "cs01" in **appsetings.json** file. Target to your local database and set the user and password required.
+Update the connection string **"cs01"** in **appsetings.json** file. Target to your local database and set the user and password required.
 
 ```json
 {
