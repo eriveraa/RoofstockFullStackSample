@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Property>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Properties</h1>
+
+@{
+    if (TempData["Message"] != null)
+    {
+        if (TempData["Error"] != null && bool.Parse(TempData["Error"].ToString()))
+        {
+            <h5 style="color:red;">@TempData["Message"]</h5>
+        }
+        else
+        {
+            <h5 style="color:forestgreen;">@TempData["Message"]</h5>
+        }
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearBuilt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthlyRent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrossYield)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YearBuilt)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ListPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonthlyRent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrossYield)
+                </td>
+                <td>
+                    <form asp-action="Save" method="post">
+                        <input type="submit" value="Save" />
+                        @Html.Hidden("Id", item.Id)
+                        @Html.Hidden("Address", item.Address)
+                        @Html.Hidden("YearBuilt", item.YearBuilt)
+                        @Html.Hidden("ListPrice", item.ListPrice)
+                        @Html.Hidden("MonthlyRent", item.MonthlyRent)
+                        @Html.Hidden("GrossYield", item.GrossYield)
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*@{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
