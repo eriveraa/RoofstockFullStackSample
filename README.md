@@ -1,5 +1,6 @@
 # Roofstock FullStack Sample
 ASP.Net Core MVC application that fetch data from API endpoint and save into local database.
+
 The project gets the data from a specific endpoint and maps (with Automapper) into a flat DTO in order to show in the browser. In the browser UI, the user is able to save the record into database. 
 When the user writes the record, the database is first searched, if the record does not exist, it is saved and a successful message is sent. Otherwise, if the record already exists, a message is sent indicating it.
 
