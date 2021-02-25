@@ -1,5 +1,7 @@
 # Roofstock FullStack Sample
 ASP.Net Core MVC application that fetch data from API endpoint and save into local database.
+The project gets the data from a specific endpoint and maps (with Automapper) into a flat DTO in order to show in the browser. In the browser UI, the user is able to save the record into database. 
+When the user writes the record, the database is first searched, if the record does not exist, it is saved and a successful message is sent. Otherwise, if the record already exists, a message is sent indicating it.
 
 ## Database creation
 In order to use this demo, create a local SQL Server database (SQLExpress or better). Then, create this table:
@@ -25,7 +27,7 @@ GO
 ```
 
 ## Connection string
-Update the ConnectionString "cs01" in appsetings.json file. Target to your local database and set the user and password required.
+Update the ConnectionString "cs01" in **appsetings.json** file. Target to your local database and set the user and password required.
 
 ```json
 {
@@ -45,5 +47,8 @@ Update the ConnectionString "cs01" in appsetings.json file. Target to your local
 
 ## Run and execute
 Compile the solution and RUN in Visual Studio 2019.
+![image info](./Screenshots/screen01.png)
 
+## Credits
+Created by Eduardo (eriveraa@gmail.com)
 
